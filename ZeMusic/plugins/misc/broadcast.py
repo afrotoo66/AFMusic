@@ -10,7 +10,7 @@ import config
 from config import adminlist, chatstats, clean, userstats
 from strings import get_string
 from ZeMusic import app, userbot
-from config.config import OWNER_ID
+from config import OWNER_ID
 from ZeMusic.utils.database import (get_active_chats,
                                        get_authuser_names, get_client,
                                        get_particular_top,
