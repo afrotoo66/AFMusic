@@ -8,7 +8,7 @@ from pyrogram.raw import types
 
 import config
 from config import adminlist, chatstats, clean, userstats
-from strings import get_command
+from strings import get_string
 from ZeMusic import app, userbot
 from config.config import OWNER_ID
 from ZeMusic.utils.database import (get_active_chats,
