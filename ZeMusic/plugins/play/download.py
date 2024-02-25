@@ -11,14 +11,14 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message, InputTextMessageContent
 from youtube_search import YoutubeSearch
 
-from ZeMusic import app
+from ZeMusic import app as Client
 from ZeMusic.plugins.play.filters import command
 
 def remove_if_exists(path):
     if os.path.exists(path):
         os.remove(path)
 
-@app.on_message(command(["/song", "نزل", "اغاني", "بحث", "تنزيل", "/music"])
+@Client.on_message(command(["/song", "نزل", "اغاني", "بحث", "تنزيل", "/music"])
 async def song_downloader(client, message: Message):
     query = " ".join(message.command[1:])
     m = await message.reply("🎬 العثور علي الاغنيه \n√")
@@ -78,7 +78,7 @@ async def song_downloader(client, message: Message):
         print(e)
 
 
-@app.on_message(
+@Client.on_message(
     command(["/vsong", "/video", "حمل", "يوتيوب", "فيديو", "تحميل"]) 
 )
 async def video_downloader(client, message: Message):
