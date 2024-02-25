@@ -93,7 +93,7 @@ async def cpanel(_, message: Message):
 
 @app.on_message(filters.regex("اخفاء الازرار") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- /AFYN اذا تريد تطلعها مرة ثانية اكتب **", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- /start اذا تريد تطلعها مرة ثانية اكتب **", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 
