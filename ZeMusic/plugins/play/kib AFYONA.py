@@ -62,7 +62,7 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-app.on_message(filters.regex("اخفاء الازرار") & filters.group)
+app.on_message(filters.regex("اخفاء الازرار . 🕷") & filters.group)
 async def down(_, message):
           m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب /start**", reply_markup= ReplyKeyboardRemove(selective=True))
     
