@@ -1,3 +1,4 @@
+#افيونا @ww_2_2
 
 
 import asyncio
@@ -199,4 +200,3 @@ async def ihd(client: Client, message: Message):
             ]
         )
     )
-
