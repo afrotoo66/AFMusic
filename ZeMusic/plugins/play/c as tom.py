@@ -7,7 +7,7 @@ from ZeMusic.core.call import Mody
 from ZeMusic.utils.database import *
 from pytgcalls.exceptions import NoActiveGroupCall, TelegramServerError
 
-@app.on_message(filters.regex("تغير اسم المساعد"))
+@app.on_message(filters.regex("اسم المساعد"))
 async def tom_name(client, message):
     assistant = await group_assistant(Anon, message.chat.id)
     await message.reply("ارسل اسم المساعد الجديد:")
