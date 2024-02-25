@@ -62,13 +62,10 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-@app.on_message(filters.regex("^اخفاء الازرار"))
+app.on_message(filters.regex("اخفاء الازرار") & filters.group)
 async def down(client, message):
-          m = await message.reply(" **- تم اخفاء الازرار بنجاح .\n\n- لاظهار كيب الارشادات /alpop   \n. 🕷**\n\n- لاظهار كيب الاعضاء والتسليه  /maro  \n. **", reply_markup= ReplyKeyboardRemove(selective=True))
-
-
-
-
+          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب /start**", reply_markup= ReplyKeyboardRemove(selective=True))
+    
 @app.on_message(filters.regex("يـوتيوب. 📽"))
 def reply_to_HEY(Client, message):
     message.reply_photo(
