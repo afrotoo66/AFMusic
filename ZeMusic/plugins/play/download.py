@@ -18,8 +18,8 @@ def remove_if_exists(path):
     if os.path.exists(path):
         os.remove(path)
 
-@Client.on_message(command(["/song", "نزل", "اغاني", "بحث", "تنزيل", "/music"]) & ~filters.edited)
-async def song_downloader(_, message):
+@Client.on_message(command(["/song", "نزل", "اغاني", "بحث", "تنزيل", "/music"])
+async def song_downloader(client, message: Message):
     query = " ".join(message.command[1:])
     m = await message.reply("🎬 العثور علي الاغنيه \n√")
     ydl_ops = {
@@ -79,9 +79,9 @@ async def song_downloader(_, message):
 
 
 @Client.on_message(
-    command(["/vsong", "/video", "حمل", "يوتيوب", "فيديو", "تحميل"]) & ~filters.edited
+    command(["/vsong", "/video", "حمل", "يوتيوب", "فيديو", "تحميل"]) 
 )
-async def video_downloader(_, message):
+async def video_downloader(client, message: Message):
     ydl_opts = {
         "format": "best",
         "keepvideo": True,
