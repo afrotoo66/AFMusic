@@ -1,5 +1,5 @@
 from pyrogram import filters
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from ZeMusic import app as Client
 from ZeMusic import app
 
