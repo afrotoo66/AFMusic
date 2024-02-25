@@ -1,30 +1,22 @@
 import os
-import re
-import time
-import asyncio
-import traceback
-
-import lyricsgenius
-
-import aiofiles
-import aiohttp
 import requests
-import wget
-import yt_dlp
-from pyrogram import Client, filters
-from pyrogram.errors import FloodWait, MessageNotModified
-from pyrogram.types import Message
-from youtube_search import YoutubeSearch
-from youtubesearchpython import VideosSearch
-from yt_dlp import YoutubeDL
-from ZeMusic import app as Client
 
-from ZeMusic.plugins.play.filters import command, other_filters
+import aiohttp
+import aiofiles
+
+import yt_dlp
+from yt_dlp import YoutubeDL
+from pyrogram import Client, filters
+from pyrogram.errors import FloodWait
+from pyrogram.types import Message, InputTextMessageContent
+from youtube_search import YoutubeSearch
+
+from ZeMusic import app
+from ZeMusic.plugins.play.filters import command
 
 def remove_if_exists(path):
     if os.path.exists(path):
         os.remove(path)
-
 
 @Client.on_message(command(["/song", "نزل", "اغاني", "بحث", "تنزيل", "/music"]) & ~filters.edited)
 async def song_downloader(_, message):
