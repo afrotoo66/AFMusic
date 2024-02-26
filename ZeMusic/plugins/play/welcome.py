@@ -2,7 +2,7 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import Message, User
 from pyrogram import Client, emoji 
-from YukkiMusic import app
+from ZeMusic import app
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, ChatPermissions
 from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
