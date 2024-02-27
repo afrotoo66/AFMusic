@@ -55,7 +55,7 @@ async def play(i):
       )
   except NoActiveGroupCall:
     try:
-        await Yukki.join_assistant(i,i)
+        await Mody.join_assistant(i,i)
     except Exception as e:
        await app.send_message(i,f"{e}")
   except TelegramServerError:
