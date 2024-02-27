@@ -9,7 +9,7 @@ from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 #############################
 
 @app.on_message(filters.text & (filters.channel | filters.private))            
-async def hhhki(client: Client, message: Message):
+async def ZeMusic(client: Client, message: Message):
        msg = message.text
        usr = await client.get_chat(message.from_user.id)
        name = usr.first_name
