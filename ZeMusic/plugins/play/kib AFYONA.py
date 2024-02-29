@@ -49,7 +49,10 @@ REPLY_MESSAGE_BUTTONS = [
         ("لو خيروك"),
         ("احساب العمر")
     ],    
-
+ [
+        ("🥺 ¦ حذف الكيبورد")
+        
+    ],    
   
 ]
 
@@ -62,10 +65,13 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-app.on_message(filters.regex("اخفاء الازرار . 🕷") & filters.group)
-async def down(_, message):
-          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب /start**", reply_markup= ReplyKeyboardRemove(selective=True))
-    
+@app.on_message(filters.command(["🥺 ¦ حذف الكيبورد"], ""))
+async def ahmed(_, message: Message): 
+    await message.reply_text(
+        text="""جتك قفله في دماغك 🥺""",            
+  reply_markup=ReplyKeyboardRemove()
+    )
+
 @app.on_message(filters.regex("يـوتيوب. 📽"))
 def reply_to_HEY(Client, message):
     message.reply_photo(
