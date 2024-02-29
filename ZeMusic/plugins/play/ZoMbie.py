@@ -428,38 +428,7 @@ async def add_group(app,m):
           await app.send_message(int(r.get(f"bot_owner{bot_id}")), text,
           disable_web_page_preview=True)
 
-@app.on_raw_update(group=7)
-async def kick_from_group(app: Client, m: Update, _, __):
-   try:
-     name = re.search(r"first_name='([^']+)'", str(_)).group(1)
-     title = re.search(r"title='([^']+)'", str(__)).group(1)
-     if m.new_participant:
-      get = await app.get_me()
-      if m.new_participant.peer.user_id == get.id:
-        print("🌀")
-      else:  return 
-      if m.new_participant.kicked_by:
-        print("🌀")
-      del_group(int(f'-100{m.channel_id}'))
-      text = '• تم طرد البوت من مجموعة:\n\n'
-      text += f'• اسم الي طردني : [{name}](tg://user?id={m.new_participant.kicked_by})\n'
-      text += f'• ايدي الي طردني : {m.new_participant.kicked_by}\n'
-      text += f'\n• معلومات المجموعة: \n'
-      text += f'\n• ايدي المجموعة: `-100{m.channel_id}`'
-      text += f'\n• اسم المجموعه: {title}'
-      text += '\n• تم مسح جميع بيانات الجروب'
-      if len(get_admins()) > 0:
-          list = get_admins()
-          for admin in list:
-            await app.send_message(int(admin), text,
-            disable_web_page_preview=True)
-          await app.send_message(int(r.get(f"bot_owner{bot_id}")), text,
-          disable_web_page_preview=True)
-      else:
-          await app.send_message(int(r.get(f"bot_owner{bot_id}")), text,
-          disable_web_page_preview=True)
-   except:
-     pass
+
       
 
 @app.on_message(filters.private, group=8)
